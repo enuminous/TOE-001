@@ -12,7 +12,7 @@
 </style>
 </head>
 <body>
-<header><div class="shell top"><a class="brand" href="#top" aria-label="TOE-001 home"><span class="mark">∑</span><span>MONOLITHIC <small>TOE / 001 · PHYSICS LABORATORY</small></span></a><nav class="topnav" aria-label="Sections"><a href="#laboratory">Laboratory</a><a href="#spectrum">Response</a><a href="#verification">Evidence</a><a href="PAPER.md">Paper ↗</a></nav></div></header>
+<header><div class="shell top"><a class="brand" href="#top" aria-label="TOE-001 home"><span class="mark">∑</span><span>MONOLITHIC <small>TOE / 001 · PHYSICS LABORATORY</small></span></a><nav class="topnav" aria-label="Sections"><a href="#laboratory">Laboratory</a><a href="#spectrum">Response</a><a href="#me007">ME-007</a><a href="#verification">Evidence</a><a href="PAPER.md">Paper ↗</a></nav></div></header>
 <main id="top" class="shell">
 <section class="hero"><div><div class="eyebrow">Experimental mathematics / reproducible browser model</div><h1>Unified Action <em>Laboratory.</em></h1><p>Explore the flat, spatially homogeneous two-scalar sector of the TOE-001 candidate. Compare an exact normal-mode solution against velocity-Verlet integration, examine energy conservation, and test a hypothetical linear response. Runs entirely in your browser.</p></div><aside class="scope"><strong>SCIENTIFIC BOUNDARY · CONDITIONAL CLASSICAL MODEL</strong>General relativity and the Standard Model are assumed in the underlying action, not derived. This page does <b>not</b> simulate curved spacetime, particle interactions or quantum gravity; it is <b>not</b> a Theory of Everything or empirical EFMW validation.</aside></section>
 <div class="modelstrip"><div class="math">φ̈ + m²φ + gχ = 0 &nbsp;&nbsp; χ̈ + M²χ + gφ = 0</div><div class="hint">Homogeneous flat limit of a covariant GR + assumed SM + canonical two-scalar action. All values are arbitrary, dimensionless test parameters.</div></div>
@@ -37,6 +37,77 @@
 <article class="panel"><div class="panelhead"><h2>Model and reproducibility</h2><span>Finite precision · local</span></div><div class="bodycopy"><p><strong>Method:</strong> position and velocity are propagated by the same velocity-Verlet update as <a href="toe001/model.py">toe001/model.py</a>, while an independent exact two-mode solution provides a reference.</p><div class="statline"><span>Model status</span><b id="modelStatus">—</b></div><div class="statline"><span>Step count</span><b id="stepsRead">—</b></div><div class="statline"><span>Initial energy E₀</span><b id="e0Read">—</b></div><div class="statline"><span>Final energy E<sub>T</sub></span><b id="eTRead">—</b></div><div class="statline"><span>Difference vs frozen reference</span><b id="referenceRead">Change to frozen benchmark</b></div><p class="tiny" style="margin-top:14px">The frozen Python reference uses m²=1, M²=4, g=0.25, Δt=.001, T=20, φ(0)=1, χ(0)=0 and zero initial velocities. It is available as <a href="results/reference.json">results/reference.json</a>. Browser floating-point results may differ slightly.</p><p>Read the <a href="PAPER.md">full technical paper</a> and <a href="https://github.com/enuminous/papers/blob/main/TOE-001-Unified-Action-and-Correspondence-Test.md">published audit article</a>.</p></div></article></section>
 <section id="verification" class="validation"><article class="panel"><div class="panelhead"><h2>Verification and closure gates</h2><span>Evidence is not belief</span></div><div class="gates"><div class="gate"><i class="dot"></i><div>Covariant classical action specified<small>Paper derivation under stated assumptions; not a quantum-gravity result.</small></div></div><div class="gate"><i class="dot"></i><div>Positive-definite scalar stability test<small>λ−&gt;0 and λ+&gt;0 only in the stable parameter region.</small></div></div><div class="gate"><i class="dot"></i><div>Exact / numerical consistency diagnostic<small>Locally computed energy drift and exact trajectory discrepancy.</small></div></div><div class="gate"><i class="dot open"></i><div>Original EFMW informational tensor, ME-007 equivalence<small>UNRESOLVED · The conventional stress tensor cannot silently replace the EFMW proposal.</small></div></div><div class="gate"><i class="dot open"></i><div>Quantum gravity and emergent Standard Model<small>UNRESOLVED · No ultraviolet completion or noncircular particle derivation.</small></div></div><div class="gate"><i class="dot open"></i><div>Unique observable and independent experiment<small>UNRESOLVED · No EFMW-specific measured effect or held-out physical prediction.</small></div></div></div></article>
 <article class="panel"><div class="panelhead"><h2>Research boundary</h2><span>TOE_CLOSED = false</span></div><div class="bodycopy"><p><span class="sectiontag">Conservation law</span></p><p class="math" style="font-size:18px">∇<sup>μ</sup>T<sub>μν</sub> = 0 &nbsp; <span class="tiny">(on shell, conditional)</span></p><p>For this conventional two-scalar action, covariant conservation follows from its Euler–Lagrange equations and diffeomorphism invariance. That result does not establish the original historical EFMW ME-007 stress tensor.</p><p><span class="sectiontag">Retarded memory</span></p><p class="math" style="font-size:18px">χ = χ<sub>hom</sub> + g G<sub>R</sub>∗φ</p><p>Eliminating χ produces a causal history-dependent equation with a specified retarded Green function. This is established field-theory mathematics, not a new force.</p><p><span class="sectiontag">Provenance</span></p><p>TOE-001 was developed from the Wright/Monolithic EFMW research program with AI assistance, while the GR, Standard Model and coupled-scalar mathematics are established community physics. <a href="README.md">Repository documentation</a> · <a href="https://github.com/enuminous/QST/blob/main/QST-002.md">QST-002</a>.</p></div></article></section>
+<!-- TOE001-ME007-LAB-START -->
+<section class="panel" id="me007" style="margin-top:24px" aria-label="ME-007 covariant stress and cosmological consistency lab">
+ <div class="panelhead"><h2>ME-007 · Covariant informational-source candidate</h2><span>CLASSICAL FLRW · NOT HISTORICAL PROOF</span></div>
+ <div class="bodycopy"><p>This is an <strong>explicitly chosen</strong> stress-energy partition of TOE-001's canonical two-scalar action: G<sub>μν</sub> + Λg<sub>μν</sub> = M<sub>Pl</sub><sup>−2</sup>(T<sub>μν</sub><sup>(α)</sup> + κI<sub>μν</sub><sup>(α)</sup>). Its <strong>total</strong> covariant divergence vanishes on shell, but neither sector needs to be conserved separately. The historical EFMW information tensor is <strong>not uniquely derived</strong>. <a href="ME007_INTEGRATION.md">Read the complete derivation and limitation</a>.</p></div>
+ <div class="controls" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px">
+  <div class="control"><label for="me007_alpha">Interaction allocation α <output id="me007_alpha_val">0.50</output></label><input type="range" id="me007_alpha" min="0" max="1" step="0.05" value="0.5"></div>
+  <div class="control"><label for="me007_kappa">Information normalization κ <output id="me007_kappa_val">1.00</output></label><input type="range" id="me007_kappa" min="0.25" max="4" step="0.25" value="1"></div>
+  <div class="control"><label for="me007_rhom">Initial ordinary matter ρ<sub>m</sub> <output id="me007_rhom_val">0.20</output></label><input type="range" id="me007_rhom" min="0" max="1" step="0.05" value="0.20"></div>
+  <div class="control"><label for="me007_w">Matter equation of state</label><select id="me007_w"><option value="0">Dust / w = 0</option><option value="0.333333333333">Radiation / w = 1/3</option><option value="-1">Vacuum / w = −1</option></select></div>
+ </div>
+ <div class="bodycopy" style="padding-top:0"><button id="me007_run" class="quick" style="max-width:340px" type="button">Run 2,400-step cosmology consistency test</button><div class="inline-result" id="me007_message" role="status" aria-live="polite">Uses m², M² and g from the scalar laboratory controls above.</div></div>
+ <div class="metrics" style="padding:0 18px 18px"><div class="metric"><div class="key">Friedmann residual</div><div class="val" id="me007_friedmann">—</div><div class="sub">normalized max |3M²H²−ρ−ΛM²|</div></div><div class="metric"><div class="key">Exchange balance</div><div class="val" id="me007_exchange">—</div><div class="sub">max of |Q − continuity|</div></div><div class="metric"><div class="key">Final Hubble H</div><div class="val" id="me007_H">—</div><div class="sub">flat expanding branch · dimensionless</div></div><div class="metric"><div class="key">Total source mismatch</div><div class="val" id="me007_source">—</div><div class="sub">from arbitrary α and κ split</div></div></div>
+ <div class="plotpair" style="padding:0 18px 16px"><div class="panel"><div class="panelhead"><h3>Cosmological expansion</h3><span>H(t) and a(t) · two scales</span></div><div class="keyrow"><span><i class="linekey" style="background:#77eac1"></i>H</span><span><i class="linekey" style="background:#83bfff"></i>a (normalized)</span></div><div class="figure sm"><canvas id="me007_cosmology_plot" role="img" aria-label="Hubble rate and relative scale factor time series"></canvas></div></div><div class="panel"><div class="panelhead"><h3>Energy exchange</h3><span>Q ordinary + κQ information = 0</span></div><div class="keyrow"><span><i class="linekey" style="background:#f7bd77"></i>Q ordinary</span><span><i class="linekey" style="background:#83bfff"></i>κQ information</span></div><div class="figure sm"><canvas id="me007_exchange_plot" role="img" aria-label="Opposing time-dependent exchange rates for ordinary and information partitions"></canvas></div></div></div>
+ <div class="bodycopy" style="padding-top:0"><p><strong>Physical consequence:</strong> in this spatially flat model with positive canonical kinetic terms and matter satisfying ρ<sub>m</sub>≥0, w≥−1, Ḣ ≤ 0. A contracting-to-expanding nonsingular bounce cannot occur without changing assumptions. A preferred universal rotation axis also cannot emerge from a perfectly isotropic FLRW ansatz.</p><p><strong>Closure gates:</strong> conditional conservation <strong>PASS</strong> · source-split uniqueness <strong>UNRESOLVED</strong> · historical EFMW tensor identification <strong>UNRESOLVED</strong> · UV quantum gravity <strong>UNRESOLVED</strong> · Theory of Everything <strong>NOT ESTABLISHED</strong>.</p><p class="tiny">All values are dimensionless. This section solves a spatially flat homogeneous classical Einstein–scalar perfect-fluid system. It is not a measurement, particle experiment, or full quantum-field simulation.</p></div>
+</section>
+<script>
+window.addEventListener('load',()=>{
+(function(){'use strict';
+const $=id=>document.getElementById(id);
+function integrate(){
+ const p=window.TOE001.read(), m2=p.m2, M2=p.M2, gm=p.g;
+ if(!(m2>0&&M2>0&&gm*gm<m2*M2))throw Error('A positive scalar mass matrix is required (g² < m²M²).');
+ const alpha=Number($('me007_alpha').value),kappa=Number($('me007_kappa').value),rm0=Number($('me007_rhom').value),w=Number($('me007_w').value);
+ if(!(kappa!==0&&Number.isFinite(kappa)))throw Error('κ must be nonzero.');
+ const V=(a,b)=>(m2*a*a+M2*b*b)/2+gm*a*b;
+ const density=y=>{const [phi,chi,u,v,,,rm]=y;return rm+(u*u+v*v)/2+V(phi,chi);};
+ const phi0=.7,chi0=-.3,u0=.2,v0=-.1,alpha0=1,MP2=1,Lambda=0,dt=.001,n=2400;
+ const energy0=rm0+(u0*u0+v0*v0)/2+V(phi0,chi0);
+ let y=[phi0,chi0,u0,v0,alpha0,Math.sqrt(energy0/(3*MP2)+Lambda/3),rm0];
+ const deriv=x=>{const [phi,chi,u,v,a,H,rm]=x;return [u,v,-3*H*u-m2*phi-gm*chi,-3*H*v-M2*chi-gm*phi,H*a,-(u*u+v*v+(1+w)*rm)/(2*MP2),-3*H*(1+w)*rm];};
+ const add=(x,k,f)=>x.map((v,i)=>v+dt*f*k[i]);
+ const step=x=>{const a=deriv(x),b=deriv(add(x,a,.5)),c=deriv(add(x,b,.5)),d=deriv(add(x,c,1));return x.map((z,i)=>z+dt*(a[i]+2*b[i]+2*c[i]+d[i])/6);};
+ let constraintMax=0,exchangeMax=0,sourceMax=0;
+ const trace=[];
+ for(let i=0;i<=n;i++){
+  const [phi,chi,u,v,a,H,rm]=y;
+  const rho=density(y),P=w*rm+(u*u+v*v)/2-V(phi,chi);
+  const mix=gm*phi*chi;
+  const rOrd=rm+u*u/2+m2*phi*phi/2+alpha*mix;
+  const pOrd=w*rm+u*u/2-m2*phi*phi/2-alpha*mix;
+  const rI=(v*v/2+M2*chi*chi/2+(1-alpha)*mix)/kappa;
+  const pI=(v*v/2-M2*chi*chi/2-(1-alpha)*mix)/kappa;
+  constraintMax=Math.max(constraintMax,Math.abs(3*MP2*(H*H-Lambda/3)-rho)/Math.max(1,Math.abs(rho)));
+  sourceMax=Math.max(sourceMax,Math.abs(rOrd+kappa*rI-rho),Math.abs(pOrd+kappa*pI-P));
+  const q=-gm*((1-alpha)*chi*u-alpha*phi*v);
+  const [dphi,dchi,du,dv,,,dm]=deriv(y);
+  const dOrd=dm+u*du+m2*phi*dphi+alpha*gm*(dphi*chi+phi*dchi);
+  const dInfo=(v*dv+M2*chi*dchi+(1-alpha)*gm*(dphi*chi+phi*dchi))/kappa;
+  const bOrd=dOrd+3*H*(rOrd+pOrd),bInfo=dInfo+3*H*(rI+pI);
+  exchangeMax=Math.max(exchangeMax,Math.abs(bOrd-q),Math.abs(bInfo+q/kappa));
+  if(i%6===0)trace.push([i*dt,H,a,q,-q]);
+  if(i<n)y=step(y);
+ }
+ return {steps:n,dt,parameters:{m2,M2,g:gm,kappa,alpha,rho_m0:rm0,w,MP2,Lambda},initial:{phi:phi0,chi:chi0,u:u0,v:v0},last:y,max_relative_friedmann_residual:constraintMax,max_partition_exchange_error:exchangeMax,max_total_source_mismatch:sourceMax,trace,closure:{historical_efmw_tensor_identified:false,quantum_gravity:false,TOE:false}};
+}
+function plot(id,rows,idx,scaleColor){const cvs=$(id),w=cvs.clientWidth,h=cvs.clientHeight;if(!w||!h)return;const dpr=Math.min(window.devicePixelRatio||1,2),ctx=cvs.getContext('2d');cvs.width=w*dpr;cvs.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
+ const v1=rows.map(r=>r[idx[0]]),v2=rows.map(r=>r[idx[1]]),padding={l:48,r:16,t:18,b:28}; const pw=w-padding.l-padding.r,ph=h-padding.t-padding.b;if(pw<10||ph<10)return;
+ ctx.strokeStyle='#293b4d';ctx.lineWidth=1;ctx.font='11px ui-monospace,Consolas,monospace';ctx.fillStyle='#9aaebe';
+ for(let i=0;i<=4;i++){const x=padding.l+pw*i/4;ctx.beginPath();ctx.moveTo(x,padding.t);ctx.lineTo(x,padding.t+ph);ctx.stroke();ctx.fillText((2.4*i/4).toFixed(1),x-8,h-10);}
+ for(let j=0;j<2;j++){const vals=j?v2:v1;let lo=Math.min(...vals),hi=Math.max(...vals);if(lo===hi){lo-=.01;hi+=.01;}const span=hi-lo;lo-=span*.1;hi+=span*.1;ctx.strokeStyle=scaleColor[j];ctx.lineWidth=2.2;ctx.beginPath();vals.forEach((value,i)=>{const x=padding.l+pw*i/Math.max(1,vals.length-1),y=padding.t+ph*(hi-value)/(hi-lo);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();ctx.fillStyle=scaleColor[j];ctx.fillText(''+(j?'B':'A')+' '+(vals[0]).toFixed(3),padding.l+6,padding.t+11+j*14);}
+}
+let last=null;
+function run(){try{last=integrate();const r=last,form=x=>Number(x).toExponential(2);$('me007_friedmann').textContent=form(r.max_relative_friedmann_residual);$('me007_exchange').textContent=form(r.max_partition_exchange_error);$('me007_H').textContent=r.last[5].toFixed(6);$('me007_source').textContent=form(r.max_total_source_mismatch);$('me007_message').textContent='Conditional classical FLRW integration completed · 2,400 RK4 steps · no EFMW tensor uniqueness';plot('me007_cosmology_plot',r.trace,[1,2],['#77eac1','#83bfff']);plot('me007_exchange_plot',r.trace,[3,4],['#f7bd77','#83bfff']);}catch(err){$('me007_message').textContent='UNRESOLVED — '+err.message;last=null;['me007_friedmann','me007_exchange','me007_H','me007_source'].forEach(id=>$(id).textContent='—');}}
+$('me007_run').addEventListener('click',run);
+for(const id of ['me007_alpha','me007_kappa','me007_rhom'])$(id).addEventListener('input',()=>{$(id+'_val').textContent=Number($(id).value).toFixed(2);});
+window.addEventListener('resize',()=>{if(last){plot('me007_cosmology_plot',last.trace,[1,2],['#77eac1','#83bfff']);plot('me007_exchange_plot',last.trace,[3,4],['#f7bd77','#83bfff']);}});
+window.TOE001_ME007={integrate,run};run();
+})();
+});
+</script>
+<!-- TOE001-ME007-LAB-END -->
 </main>
 <footer class="foot"><div class="shell"><div>MONOLITHIC · TOE-001 &nbsp; / &nbsp; Conditional mathematical laboratory — no empirical validation claimed.</div><div><a href="https://github.com/enuminous/TOE-001">Source repository</a> · <a href="PAPER.md">Technical paper</a> · <a href="https://github.com/enuminous/EFMW">EFMW review</a></div></div></footer>
 <script>
