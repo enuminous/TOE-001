@@ -1,6 +1,8 @@
 """Generate deterministic F02 scalar--tensor reference; synthetic mathematical calculation."""
 import json
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from toe001.me007_covariant import simulate
 
 if __name__=='__main__':
