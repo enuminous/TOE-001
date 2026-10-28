@@ -1,4 +1,4 @@
-"""ME-007/T0E-001 candidate: covariant total stress, FLRW demonstration.
+"""ME-007/TOE-001 candidate: covariant total stress, FLRW demonstration.
 
 This is an explicitly CHOSEN decomposition of a conventional two-scalar action.
 It does NOT identify the historical EFMW informational stress tensor uniquely.
