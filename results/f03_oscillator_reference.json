@@ -1,0 +1,59 @@
+{
+  "analysis": {
+    "MI_minus_theory_nats": 0.0003767171575015278,
+    "bootstrap_block_length_samples": 173,
+    "distinguishes_EFMW_from_ordinary_oscillators": false,
+    "estimated_correlation": -0.12793116343261604,
+    "gravitational_coupling_measured": false,
+    "half_sample_MI_nats": [
+      0.00674993405980762,
+      0.009890937362593616
+    ],
+    "ideal_Gibbs_covariance": [
+      1.0158730158730158,
+      -0.06349206349206349,
+      0.25396825396825395
+    ],
+    "n_paired": 30000,
+    "note": "Blocked uncertainty is exploratory; validation of mixing, stationarity, sensor transfer and instrument calibration required.",
+    "observed_MI_nats": 0.008250895641571112,
+    "observed_debiased_covariance": [
+      1.0162710686247869,
+      -0.06535190971877375,
+      0.2567759265819924
+    ],
+    "paired_block_bootstrap_95pct": [
+      0.006049174202042856,
+      0.010774559180288967
+    ],
+    "pass_physics": "UNRESOLVED",
+    "q_field_identified_by_measurement": false,
+    "sensor_noise_correction": "independent uncorrelated Gaussian variance only",
+    "shift_null_MI_median_nats": 0.000023566875064884734,
+    "shift_null_max_nats": 0.00040797542493848775,
+    "stationarity_screen": "REQUIRES_INDEPENDENT_VALIDATION",
+    "theory_MI_nats_from_independently_specified_stiffness": 0.007874178484069584
+  },
+  "calibration": {
+    "M2": 4,
+    "beta": 1,
+    "damping": 0.8,
+    "dt": 0.04,
+    "gamma": 0.25,
+    "m2": 1,
+    "noise_chi": 0,
+    "noise_phi": 0
+  },
+  "historical_ME006_tensor_identified": false,
+  "new_efmw_physics_established": false,
+  "note": "Even exact agreement only validates ordinary coupled stochastic dynamics; F02 q is not measured.",
+  "origin": {
+    "burn": 20000,
+    "measurement_claim": "SYNTHETIC_ONLY",
+    "seed": 20261028,
+    "steps": 200000,
+    "stride": 6,
+    "type": "independently simulated stochastic Langevin time-series"
+  },
+  "protocol": "F03_TWO_MODE_INFORMATION_BRIDGE_V1"
+}
