@@ -26,6 +26,18 @@ The laboratory includes:
 
 **Scope:** This is a presentation and calculator for the specified classical subsector, **not** a complete gravitational/particle simulation, a novel physical signature or a Theory of Everything.
 
+## ME-007 conserved-source candidate (TOE001–ME007–r1)
+
+**[Read the complete ME-007 derivation](ME007_INTEGRATION.md)** · [Python implementation](toe001/me007.py) · [FLRW reference output](results/me007_flrw_reference.json) · [Symbolic identity checks](results/me007_symbolic_checks.json) · [GitHub Actions verification](.github/workflows/verify-me007.yml)
+
+We preserved [the canonical ME-007 source](https://github.com/enuminous/Monolithic-102-Zoo-Lean4/blob/01f51acb0b0e564105dcf7f14cc55998d41b91ce/Monolithic102/ME007.lean) and constructed an **explicitly assumed** informational-tensor candidate from the TOE-001 two-scalar stress tensor. It reproduces ME-007's Einstein-equation **shape** and proves conditional on-shell conservation, including energy exchange between the chosen ordinary and information sectors. An expandable spatially flat FLRW laboratory is now available in [index.html](index.html#me007).
+
+**Research finding:** the split is mathematically nonunique: changing the interaction allocation α and normalization κ changes the labels assigned to the two sources while leaving total gravity unchanged. Consequently this construction does **not** identify the historical EFMW tensor or close ME-007 as an EFMW-specific physical law.
+
+The classical FLRW reduction also implies **no smooth flat-spacetime bounce** with positive canonical kinetic terms and ordinary matter satisfying the null energy condition, and it cannot produce universal rotation from an exactly isotropic metric. These are useful restrictions rather than proof of unification.
+
+**Verification:** the expanded suite has **31 passing Python unit tests** and **8 passing SymPy identities** (flat-FLRW polynomial consequences); browser model exchange/constraint checks were also exercised. The [CI workflow](.github/workflows/verify-me007.yml) validates those operations at each relevant push. **No Lean proof of the full four-dimensional tensor equation, independent physics experiment, quantum gravity or full Theory of Everything has been achieved.**
+
 ## Reproduce with Python 3.10+
 
 ```bash
