@@ -46,7 +46,7 @@ checks=[
     zero('normal-mode determinant',sp.det(sp.Matrix([[m2,gm],[gm,M2]]))-(m2*M2-gm**2)),
 ]
 result={
-    'kind':'TOE-001-ME007-offshell-expression-substitution-symbolic-gates',
+    'kind':'TOE-001-ME007-on-shell-homogeneous-FLRW-symbolic-identities',
     'status':'PASS' if all(x['status']=='PASS' for x in checks) else 'FAIL',
     'count':len(checks),
     'scope':'Polynomial identities along specified flat-FLRW on-shell equations, using SymPy, not Lean verification of general 4D geometry.',
