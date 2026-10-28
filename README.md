@@ -8,6 +8,24 @@ This package implements a dimensionless **flat homogeneous two-scalar subsector*
 
 The full curved-spacetime Einstein equations, SM quantum field equations, quantum gravity, and the historical EFMW informational tensor are **not** numerically solved here. The program is a baseline architecture for tests, not a successful claim of physical unification.
 
+## Interactive browser laboratory
+
+**[Open `index.html` source](index.html)** · **[Download the standalone HTML file](https://raw.githubusercontent.com/enuminous/TOE-001/main/index.html)**
+
+The root `index.html` is a **self-contained, offline-capable laboratory** requiring no packages, network or build tooling. Download it, then open it in a web browser. To publish it as a GitHub Pages website, enable **Settings → Pages → Deploy from branch → `main` / `/ (root)`** and wait for GitHub to report a successful deployment. A public Pages deployment has not been independently confirmed.
+
+The laboratory includes:
+
+- Adjustable squared masses, mixing, wavenumber, response regulator, initial conditions and integration timestep.
+- A velocity-Verlet integration of the same **flat homogeneous two-scalar model** as [`toe001/model.py`](toe001/model.py), alongside an independently calculated exact normal-mode trajectory.
+- Oscillation graphs, field-space orbit, maximum energy drift and numerical error, and a conditional response spectrum compared with the **`g=0` null model**.
+- A frozen 20,000-step benchmark button matching the reference inputs in [`results/reference.json`](results/reference.json), plus an evidence JSON export.
+- A visible distinction between conditional classical checks and the **unresolved** EFMW ME-007 tensor, quantum-gravity, Standard Model emergence and empirical-prediction obligations.
+
+**Browser validation:** A local Chromium test completed without JavaScript errors. The frozen benchmark returned maximum energy drift approximately `1.230188e-7` and final position error approximately `6.796413e-7`, matching the Python reference to floating-point precision. The null-model switch and unstable-mass-matrix blocking were also exercised.
+
+**Scope:** This is a presentation and calculator for the specified classical subsector, **not** a complete gravitational/particle simulation, a novel physical signature or a Theory of Everything.
+
 ## Reproduce with Python 3.10+
 
 ```bash
