@@ -58,6 +58,16 @@ F02 introduces an **explicitly assumed dimensionless field q** with a local stan
 
 The demonstration reports 15 new local unit tests and eight SymPy identities, with a synthetic Friedmann constraint residual of order `10^-13`; measured astrophysical data have not been analyzed. The historical ME-006 recursive tensor, local information-density measurement map, physical coupling and quantum-gravity closure remain **UNRESOLVED**.
 
+## F03 — Measured-information bridge for two oscillators
+
+**[F03 full experimental protocol](F03_TWO_OSCILLATOR_MEASUREMENT_PROTOCOL.md)** · [Python time-dependent Langevin model and CSV analyzer](toe001/me007_experiment.py) · [18 focused tests](tests/test_me007_experiment.py) · [reproducible runner](scripts/run_f03_oscillators.py) · [independent calibration template](scripts/f03_calibration_template.json) · [frozen dynamic-simulation result](results/f03_oscillator_reference.json).
+
+F03 advances F01's direct independent equilibrium draws to a **time-correlated stochastic classical trajectory**: 200,000 BAOAB Langevin integration steps, 20,000 burn-in steps, 30,000 paired position measurements. Its conventional Gibbs prediction is approximately **0.00787418 nats** and its simulated estimate is **0.00825090 nats**, with an exploratory time-block bootstrap interval **[0.00605, 0.01077]**. This is an agreement check for established two-mode stochastic dynamics, **not a real physical experiment or evidence of informational gravity**.
+
+A real-data CSV mode accepts measured simultaneous time,phi,chi readouts only with a separately specified, independently calibrated JSON; the output records SHA-256 provenance but does not authenticate user-supplied sensor data. Stationarity, equilibrium, cross-talk and sample autocorrelation still require experimental validation. A public coupled-MEMS measurements archive was identified, but its driven/non-equilibrium signal and roughly 35 GB size prevent it from being interpreted as an already completed test of the equilibrium F01 formula.
+
+Use \`python3 scripts/run_f03_oscillators.py\` to reproduce the frozen synthetic benchmark; use \`--input data.csv --calibration calibration.json --out observed.json\` for genuine physical measurements. **F02's gravitational q field and the original ME-006 tensor remain unidentified.**
+
 ## Reproduce with Python 3.10+
 
 ```bash
