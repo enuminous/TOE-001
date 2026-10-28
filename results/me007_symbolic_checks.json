@@ -1,0 +1,49 @@
+{
+  "kind": "TOE-001-ME007-offshell-expression-substitution-symbolic-gates",
+  "status": "PASS",
+  "count": 8,
+  "scope": "Polynomial identities along specified flat-FLRW on-shell equations, using SymPy, not Lean verification of general 4D geometry.",
+  "checks": [
+    {
+      "name": "total density decomposition",
+      "status": "PASS",
+      "residual": "0"
+    },
+    {
+      "name": "total pressure decomposition",
+      "status": "PASS",
+      "residual": "0"
+    },
+    {
+      "name": "ordinary exchange",
+      "status": "PASS",
+      "residual": "0"
+    },
+    {
+      "name": "information exchange",
+      "status": "PASS",
+      "residual": "0"
+    },
+    {
+      "name": "total conservation",
+      "status": "PASS",
+      "residual": "0"
+    },
+    {
+      "name": "Friedmann constraint propagation",
+      "status": "PASS",
+      "residual": "0"
+    },
+    {
+      "name": "Raychaudhuri sign source",
+      "status": "PASS",
+      "residual": "0"
+    },
+    {
+      "name": "normal-mode determinant",
+      "status": "PASS",
+      "residual": "0"
+    }
+  ],
+  "scientific_closure": false
+}
