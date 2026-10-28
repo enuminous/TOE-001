@@ -1,0 +1,58 @@
+{
+  "closure_gates": {
+    "ME007_original_EFMW_equivalence": "UNRESOLVED",
+    "covariant_action_specified": "PASS_SOURCE_DERIVATION",
+    "emergent_chiral_standard_model": "UNRESOLVED",
+    "external_physical_data": "UNRESOLVED",
+    "flat_homogeneous_energy_conservation": "PASS_NUMERICAL_AND_IDENTITY",
+    "quantum_gravity_uv_complete": "UNRESOLVED",
+    "scalar_mass_stability": "PASS_CONDITIONAL",
+    "standard_GR_SM_vacuum_solution": "PASS_CONDITIONAL_NOT_FULL_EQUIVALENCE",
+    "unique_EFMW_observable": "UNRESOLVED"
+  },
+  "conditional_susceptibility_imag_at_poles": [
+    100.3627812325797,
+    0.3414279719261861
+  ],
+  "frequencies": [
+    0.9896006100571306,
+    2.0051659862900513
+  ],
+  "mass_eigenvalues_squared": [
+    0.9793093674254452,
+    4.020690632574555
+  ],
+  "model": "GR + assumed SM + two canonical mixed scalars (only flat homogeneous sector simulated)",
+  "no_empirical_claim": true,
+  "null_model": "g=0 removes mixing and memory response; extra free field remains unless explicitly decoupled",
+  "parameters": {
+    "M_squared": 4.0,
+    "m_squared": 1.0,
+    "mixing_g": 0.25,
+    "units": "arbitrary dimensionless"
+  },
+  "phi_response_residues": [
+    0.9931969619160719,
+    0.006803038083928133
+  ],
+  "schema": "TOE-001-test-v1",
+  "simulated": {
+    "dt": 0.001,
+    "exact_q": [
+      0.5787680063406376,
+      -0.10916356684123371
+    ],
+    "final_energy": 0.49999991585861475,
+    "final_q": [
+      0.5787673266993021,
+      -0.10916388444491198
+    ],
+    "final_time": 20.0,
+    "initial_energy": 0.5,
+    "max_position_error_vs_exact": 6.79641335543657e-07,
+    "max_relative_energy_drift": 1.2301884583232336e-07,
+    "max_velocity_error_vs_exact": 9.059596725244368e-07,
+    "steps": 20000
+  },
+  "status": "CONDITIONAL_MATH_NOT_TOE"
+}
