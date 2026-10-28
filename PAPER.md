@@ -179,3 +179,37 @@ These are numerical results for a well-known quadratic oscillator theory—not e
 - Standard GR/scalar variation and Klein–Gordon constructions are textbook mathematics; the conservation identities herein are not claimed as an original scientific discovery.
 
 **Authorship note:** TOE-001 was constructed for Matthew Chenoweth Wright and Monolithic LLC with AI assistance; historical EFMW concepts are attributed to Wright, conventional field-theory principles to the wider physics community. Nothing in this document claims authorship of the Standard Model, general relativity, or other researchers' results.
+
+## Appendix — TOE001–ME007–r1 conditional gravitational source realization (28 October 2026)
+
+The original [ME-007 catalogue entry](https://github.com/enuminous/Monolithic-102-Zoo-Lean4/blob/01f51acb0b0e564105dcf7f14cc55998d41b91ce/Monolithic102/ME007.lean) specifies an Einstein equation with ordinary and informational stress but **does not define** the informational stress tensor. The new [ME007_INTEGRATION.md](ME007_INTEGRATION.md) derives **one chosen** model-specific realization from TOE-001's two-scalar action, with an explicitly added cosmological constant.
+
+Writing the scalar mixing as \(\gamma\), decompose the scalar stress as \(T_\phi^{(0)}+T_\chi^{(0)}+T_\mathrm{mix}\), with \(T^\mathrm{mix}_{\mu\nu}=-g_{\mu\nu}\gamma\phi\chi\). For any \(0\le\alpha\le1\) and nonzero dimensionless \(\kappa\), define
+
+\[
+T^{(\alpha)}_{\mu\nu}=T^\mathrm{SM}_{\mu\nu}+T^{(0)}_{\phi,\mu\nu}+\alpha T^\mathrm{mix}_{\mu\nu},
+\qquad
+I^{(\alpha)}_{\mu\nu}=\kappa^{-1}\big(T^{(0)}_{\chi,\mu\nu}+(1-\alpha)T^\mathrm{mix}_{\mu\nu}\big).
+\]
+
+The sum is *identically* the full TOE-001 matter source. Assuming the equations of motion,
+
+\[
+\nabla^\mu T^{(\alpha)}_{\mu\nu}
+=\gamma\big[(1-\alpha)\chi\nabla_\nu\phi-\alpha\phi\nabla_\nu\chi\big]
+=-\kappa\nabla^\mu I^{(\alpha)}_{\mu\nu}.
+\]
+
+Therefore the **total source** is covariantly conserved, compatible with the contracted Bianchi identity. Individual sources exchange energy and need not be separately conserved. Critically, changing \(\alpha\) leaves the metric equation and total stress unchanged while changing both labels. **Conservation alone does not determine an EFMW information tensor.**
+
+A spatially flat homogeneous FLRW reduction, [implemented numerically](toe001/me007.py) and checked against [8 independent symbolic identities](results/me007_symbolic_checks.json), obeys
+
+\[
+3M_\mathrm{Pl}^2H^2=\rho_m+\rho_\mathrm{sc}+M_\mathrm{Pl}^2\Lambda,
+\quad
+\dot H=-\frac{(1+w)\rho_m+\dot\phi^2+\dot\chi^2}{2M_\mathrm{Pl}^2}.
+\]
+
+For canonical scalars, \(\rho_m\ge0\) and \(w\ge-1\), \(\dot H\le0\). Hence the **minimal flat model does not generate a smooth contracting-to-expanding bounce**, and its isotropic symmetry cannot generate a preferred cosmic rotation. Those are conditional model constraints, not claims about all possible EFMW extensions.
+
+The original historical ME-007 tensor, the full EFMW 102 equation chain, emergent chiral Standard Model, ultraviolet quantum gravity, unique observable prediction, and independent physical evidence **remain unresolved**. The name TOE-001 denotes a research checkpoint, not a completed Theory of Everything.
