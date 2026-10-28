@@ -1,0 +1,60 @@
+name: TOE-001 conditional ME-007 consistency tests
+on:
+  push:
+    paths:
+      - 'toe001/**'
+      - 'tests/**'
+      - 'results/me007*'
+      - 'scripts/check_me007_symbolic.py'
+      - 'ME007_INTEGRATION.md'
+      - 'index.html'
+      - '.github/workflows/verify-me007.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  classical-consistency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run old and new model tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Reproduce symbolic identities (optional external algebra dependency)
+        run: |
+          python3 -m pip install 'sympy==1.14.0'
+          python3 scripts/check_me007_symbolic.py
+      - name: Enforce scientific claim boundary in reference JSON
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('results/me007_flrw_reference.json').read_text())
+          q=json.loads(Path('results/me007_symbolic_checks.json').read_text())
+          assert p['status']=='CONDITIONAL_CLASSICAL_FLRW_ONLY'
+          assert p['historical_efmw_information_tensor_identified'] is False
+          assert p['quantum_gravity_derived'] is False
+          assert p['full_theory_of_everything'] is False
+          assert q['status']=='PASS' and q['count']==8
+          print('Bounded candidate results; historical EFMW and TOE claims remain unresolved')
+          PY
+      - name: Validate inline laboratory JavaScript syntax
+        run: |
+          python3 - <<'PY'
+          import re
+          import pathlib
+          html=pathlib.Path('index.html').read_text()
+          snippets=re.findall(r'<script>(.*?)</script>',html,re.S)
+          assert len(snippets)==2
+          for i,s in enumerate(snippets):
+              pathlib.Path('/tmp/toe001-lab-%s.js'%i).write_text(s)
+          print('Found',len(snippets),'inline scripts')
+          PY
+          node --check /tmp/toe001-lab-0.js
+          node --check /tmp/toe001-lab-1.js
