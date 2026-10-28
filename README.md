@@ -38,6 +38,18 @@ The classical FLRW reduction also implies **no smooth flat-spacetime bounce** wi
 
 **Verification:** the expanded suite has **31 passing Python unit tests** and **8 passing SymPy identities** (flat-FLRW polynomial consequences); browser model exchange/constraint checks were also exercised. The [CI workflow](.github/workflows/verify-me007.yml) validates those operations at each relevant push. **No Lean proof of the full four-dimensional tensor equation, independent physics experiment, quantum gravity or full Theory of Everything has been achieved.**
 
+## F01 — Identifying an alpha/kappa-invariant information observable
+
+**[Read F01 ME-006/ME-007 identification study](F01_ME007_INFORMATION_IDENTIFICATION.md)** · [Operational model](toe001/me007_identity.py) · [14 dedicated tests](tests/test_me007_identity.py) · [Frozen synthetic dataset](results/me007_identity_reference.json) · [Reproduction script](scripts/run_me007_identity.py)
+
+**Canonical-source clarification:** ME-006 actually provides `I_{μν}=T^φ_{μν}+R_{μν}`, where `R_{μν}` is the still-undefined recursive-information remainder. The previous ME-007 study is preserved with a correction note. A concrete choice `R=T^χ+T^mix` at `κ=1` and `T=T^SM` satisfies source conservation on shell but remains conventional two-scalar physics, not the unique original EFMW information tensor.
+
+**A non-gravitational information observable:** under the newly assumed classical Gaussian thermal state, two calibrated mode amplitudes have mutual information `0.5*ln[m²*M²/(m²*M²−gamma²)]`, independent of the arbitrary partition parameters `alpha` and `kappa`. This can be estimated from jointly observed amplitude covariances without a gravitational field measurement; a second response identity connects its coupling derivative to the cross-covariance.
+
+**Synthetic reference:** for the illustrative default parameters, the analytic result is `0.007874178484` nats; 80,000 seeded Gibbs draws produce `0.007626598092` nats; the zero-coupling synthetic estimate is about `1.49e-6` nats. **14 focused Python tests passed locally**, and four independent symbolic cancellations were checked. These are synthetic/calculation results, *not actual field observations*. Neither an independent recursive `R_{μν}` nor an EFMW-specific gravitational signature has been identified.
+
+Reproduce from the repository root: `python3 -m unittest discover -s tests -v` and `python3 scripts/run_me007_identity.py`. The frozen JSON should be treated as an illustrative numerical record, not new empirical evidence.
+
 ## Reproduce with Python 3.10+
 
 ```bash
