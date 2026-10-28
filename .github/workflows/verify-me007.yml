@@ -5,11 +5,15 @@ on:
       - 'toe001/**'
       - 'tests/**'
       - 'results/me007*'
+      - 'results/f03*'
       - 'scripts/check_me007_symbolic.py'
       - 'scripts/run_me007_identity.py'
       - 'scripts/run_me007_covariant.py'
+      - 'scripts/run_f03_oscillators.py'
+      - 'scripts/f03_calibration_template.json'
       - 'scripts/check_me007_covariant_symbolic.py'
       - 'F02_COVARIANT_INFORMATION_ACTION.md'
+      - 'F03_TWO_OSCILLATOR_MEASUREMENT_PROTOCOL.md'
       - 'F01_ME007_INFORMATION_IDENTIFICATION.md'
       - 'ME007_INTEGRATION.md'
       - 'index.html'
@@ -84,6 +88,25 @@ jobs:
           assert p['full_theory_of_everything'] is False
           assert q['status']=='PASS' and q['count']==8
           print('Bounded candidate results; historical EFMW and TOE claims remain unresolved')
+          PY
+      - name: Regenerate and check F03 dynamic-oscillator record (synthetic only)
+        run: |
+          python3 scripts/run_f03_oscillators.py --out /tmp/f03_reproduced.json
+          python3 - <<'PY'
+          import json,math
+          from pathlib import Path
+          frozen=json.loads(Path('results/f03_oscillator_reference.json').read_text())
+          actual=json.loads(Path('/tmp/f03_reproduced.json').read_text())
+          for key in ('observed_MI_nats','theory_MI_nats_from_independently_specified_stiffness',
+                      'estimated_correlation','shift_null_max_nats'):
+              assert math.isclose(frozen['analysis'][key],actual['analysis'][key],rel_tol=0,abs_tol=1e-12),(key,frozen['analysis'][key],actual['analysis'][key])
+          assert frozen['analysis']['n_paired']==actual['analysis']['n_paired']==30000
+          assert actual['origin']['measurement_claim']=='SYNTHETIC_ONLY'
+          assert actual['historical_ME006_tensor_identified'] is False
+          assert actual['new_efmw_physics_established'] is False
+          assert actual['analysis']['distinguishes_EFMW_from_ordinary_oscillators'] is False
+          assert actual['analysis']['q_field_identified_by_measurement'] is False
+          print('F03 dynamic simulation reproduced and physical-claim gates remain closed')
           PY
       - name: Validate inline laboratory JavaScript syntax
         run: |
