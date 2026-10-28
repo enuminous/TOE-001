@@ -1,0 +1,97 @@
+{
+  "model": "conditional classical thermal Gibbs two-mode oscillator",
+  "units": "mutual information in nats (natural logarithm)",
+  "parameters": {
+    "m2": 1,
+    "M2": 4,
+    "gamma": 0.25,
+    "beta": 1
+  },
+  "n_samples": 80000,
+  "seed": 20261028,
+  "exact_covariance": [
+    1.0158730158730158,
+    -0.06349206349206349,
+    0.25396825396825395
+  ],
+  "exact_correlation": -0.125,
+  "exact_MI_nats": 0.007874178484069584,
+  "sample_covariance": [
+    1.0125311817336222,
+    -0.06241417911967591,
+    0.2541588534353129
+  ],
+  "sample_MI_nats": 0.007626598092364169,
+  "alpha_kappa_invariant": true,
+  "is_ordinary_gaussian_mutual_information": true,
+  "is_efmw_specific": false,
+  "me006_recursive_tensor_physically_identified": false,
+  "gravity_from_information_derived": false,
+  "experiment_on_real_physical_data": false,
+  "information_susceptibility_dMI_dgamma": 0.06349206349206349,
+  "crosscovariance_response_identity_error": 0,
+  "null_zero_mixing": {
+    "model": "conditional classical thermal Gibbs two-mode oscillator",
+    "units": "mutual information in nats (natural logarithm)",
+    "parameters": {
+      "m2": 1,
+      "M2": 4,
+      "gamma": 0,
+      "beta": 1
+    },
+    "n_samples": 80000,
+    "seed": 20261028,
+    "exact_covariance": [
+      1,
+      0,
+      0.25
+    ],
+    "exact_correlation": 0,
+    "exact_MI_nats": 0,
+    "sample_covariance": [
+      0.9967103820190512,
+      0.000862203792352522,
+      0.2503122809740027
+    ],
+    "sample_MI_nats": 0.0000014898391040115936,
+    "alpha_kappa_invariant": true,
+    "is_ordinary_gaussian_mutual_information": true,
+    "is_efmw_specific": false,
+    "me006_recursive_tensor_physically_identified": false,
+    "gravity_from_information_derived": false,
+    "experiment_on_real_physical_data": false
+  },
+  "stability_boundary": "requires m2*M2 > gamma**2",
+  "canonical_me006": "I_mu_nu = T_phi_mu_nu + R_mu_nu (R not independently specified)",
+  "canonical_me007": "G_mu_nu + Lambda*g_mu_nu = 8piG*(T_mu_nu+kappa*I_mu_nu)",
+  "baseline": {
+    "type": "standard two-mode Gaussian equilibrium",
+    "distinctive_EFMW_observable": false
+  },
+  "stress_partition_example": {
+    "alpha=0,kappa=1": {
+      "rho_ordinary": 0.465,
+      "rho_information": 0.1325,
+      "rho_total": 0.5975,
+      "rho_reconstructed": 0.5975
+    },
+    "alpha=0.5,kappa=1": {
+      "rho_ordinary": 0.43875,
+      "rho_information": 0.15875,
+      "rho_total": 0.5975,
+      "rho_reconstructed": 0.5975
+    },
+    "alpha=1,kappa=1": {
+      "rho_ordinary": 0.4125,
+      "rho_information": 0.185,
+      "rho_total": 0.5975,
+      "rho_reconstructed": 0.5975
+    },
+    "alpha=0.5,kappa=3": {
+      "rho_ordinary": 0.43875,
+      "rho_information": 0.052916666667,
+      "rho_total": 0.5975,
+      "rho_reconstructed": 0.5975
+    }
+  }
+}
