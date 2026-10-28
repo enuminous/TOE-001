@@ -4,6 +4,8 @@
 **Research:** Matthew Chenoweth Wright / Monolithic LLC, with AI-assisted mathematical and software construction.  
 **Status:** **A valid conditional classical realization of the *form* of ME-007, NOT a derivation of its original undefined informational tensor, NOT quantum gravity, and NOT a Theory of Everything.**
 
+> **ME-006 cross-reference correction (28 October 2026):** This earlier note correctly states that the isolated **ME-007 entry** does not define the information tensor, but the wider canonical **ME-006** equation immediately preceding it *does* supply the symbolic ansatz `I_{μν}=T^φ_{μν}+R_{μν}`. Its `R_{μν}` is designated recursive informational structure but has no independent constitutive law, physical observable, or unambiguous variational dynamics in the cited entry. Accordingly, the precise gap is not a complete absence of an information-tensor formula: it is the lack of a **physically identifiable recursive remainder**. The [new F01 source and operational-information audit](F01_ME007_INFORMATION_IDENTIFICATION.md) gives the corrected source reading, an explicit compatible remainder, the alpha/kappa-invariant total source, and a measurable *conditional* mutual-information scalar. It does not identify a unique gravitational information tensor.
+
 ## 1. Source provenance is a hard constraint
 
 The preserved [ME-007 canonical Lean entry](https://github.com/enuminous/Monolithic-102-Zoo-Lean4/blob/01f51acb0b0e564105dcf7f14cc55998d41b91ce/Monolithic102/ME007.lean) gives:
