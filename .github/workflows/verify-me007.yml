@@ -6,6 +6,8 @@ on:
       - 'tests/**'
       - 'results/me007*'
       - 'scripts/check_me007_symbolic.py'
+      - 'scripts/run_me007_identity.py'
+      - 'F01_ME007_INFORMATION_IDENTIFICATION.md'
       - 'ME007_INTEGRATION.md'
       - 'index.html'
       - '.github/workflows/verify-me007.yml'
@@ -26,6 +28,21 @@ jobs:
           python-version: '3.11'
       - name: Run old and new model tests
         run: python3 -m unittest discover -s tests -v
+      - name: Regenerate and compare frozen F01 information record
+        run: |
+          cp results/me007_identity_reference.json /tmp/me007_identity_frozen.json
+          python3 scripts/run_me007_identity.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          original=json.loads(Path('/tmp/me007_identity_frozen.json').read_text())
+          regenerated=json.loads(Path('results/me007_identity_reference.json').read_text())
+          assert original == regenerated, 'F01 reference does not reproduce from frozen seed'
+          assert original['is_efmw_specific'] is False
+          assert original['me006_recursive_tensor_physically_identified'] is False
+          assert original['experiment_on_real_physical_data'] is False
+          print('F01 exact/synthetic result reproduced and claim boundaries retained')
+          PY
       - name: Reproduce symbolic identities (optional external algebra dependency)
         run: |
           python3 -m pip install 'sympy==1.14.0'
