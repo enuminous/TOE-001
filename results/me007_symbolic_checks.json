@@ -1,5 +1,5 @@
 {
-  "kind": "TOE-001-ME007-offshell-expression-substitution-symbolic-gates",
+  "kind": "TOE-001-ME007-on-shell-homogeneous-FLRW-symbolic-identities",
   "status": "PASS",
   "count": 8,
   "scope": "Polynomial identities along specified flat-FLRW on-shell equations, using SymPy, not Lean verification of general 4D geometry.",
