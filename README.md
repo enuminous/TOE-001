@@ -50,6 +50,14 @@ The classical FLRW reduction also implies **no smooth flat-spacetime bounce** wi
 
 Reproduce from the repository root: `python3 -m unittest discover -s tests -v` and `python3 scripts/run_me007_identity.py`. The frozen JSON should be treated as an illustrative numerical record, not new empirical evidence.
 
+## F02 — Covariant action and the obstruction to naive information identification
+
+**[Technical paper](F02_COVARIANT_INFORMATION_ACTION.md)** · [Covariant scalar-tensor/FLRW model](toe001/me007_covariant.py) · [15 tests](tests/test_me007_covariant.py) · [frozen numerical run](results/me007_covariant_reference.json) · [8 independent symbolic identities](results/me007_covariant_symbolic.json).
+
+F02 introduces an **explicitly assumed dimensionless field q** with a local standard scalar–tensor action `F(q)R/2`, `F=M_Pl²(1−ξq²)`. Its Hilbert stress, scalar EOM, FLRW evolution, and conditional gravitational-wave distance-ratio expression are mathematically defined. **This is conventional scalar–tensor gravity, not a uniquely derived EFMW information field.** In particular, equating q to F01's fixed nonzero thermal mutual information generally **fails q's own field equation**, an informative obstruction to the attempted physical identification.
+
+The demonstration reports 15 new local unit tests and eight SymPy identities, with a synthetic Friedmann constraint residual of order `10^-13`; measured astrophysical data have not been analyzed. The historical ME-006 recursive tensor, local information-density measurement map, physical coupling and quantum-gravity closure remain **UNRESOLVED**.
+
 ## Reproduce with Python 3.10+
 
 ```bash

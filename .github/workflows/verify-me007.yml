@@ -7,6 +7,9 @@ on:
       - 'results/me007*'
       - 'scripts/check_me007_symbolic.py'
       - 'scripts/run_me007_identity.py'
+      - 'scripts/run_me007_covariant.py'
+      - 'scripts/check_me007_covariant_symbolic.py'
+      - 'F02_COVARIANT_INFORMATION_ACTION.md'
       - 'F01_ME007_INFORMATION_IDENTIFICATION.md'
       - 'ME007_INTEGRATION.md'
       - 'index.html'
@@ -47,6 +50,27 @@ jobs:
         run: |
           python3 -m pip install 'sympy==1.14.0'
           python3 scripts/check_me007_symbolic.py
+          python3 scripts/check_me007_covariant_symbolic.py
+      - name: Regenerate and compare frozen F02 scalar-tensor reference
+        run: |
+          cp results/me007_covariant_reference.json /tmp/me007_covariant_frozen.json
+          cp results/me007_covariant_symbolic.json /tmp/me007_covariant_sym_frozen.json
+          python3 scripts/run_me007_covariant.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('/tmp/me007_covariant_frozen.json').read_text())
+          b=json.loads(Path('results/me007_covariant_reference.json').read_text())
+          c=json.loads(Path('/tmp/me007_covariant_sym_frozen.json').read_text())
+          d=json.loads(Path('results/me007_covariant_symbolic.json').read_text())
+          assert a==b and c==d, 'F02 frozen diagnostics changed'
+          assert b['max_normalized_friedmann_residual'] < 1e-9
+          assert b['physical_information_field_identified'] is False
+          assert b['new_EFMW_effect_established'] is False
+          assert b['full_theory_of_everything'] is False
+          assert d['status']=='PASS' and d['count']==8
+          print('F02 reference and symbolic checks verified; physical gates remain open')
+          PY
       - name: Enforce scientific claim boundary in reference JSON
         run: |
           python3 - <<'PY'

@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "name": "scalar_equation_solved",
+      "residual": "0",
+      "status": "PASS"
+    },
+    {
+      "name": "acceleration_equation_solved",
+      "residual": "0",
+      "status": "PASS"
+    },
+    {
+      "name": "explicit_Hdot_formula",
+      "residual": "0",
+      "status": "PASS"
+    },
+    {
+      "name": "explicit_qdd_formula",
+      "residual": "0",
+      "status": "PASS"
+    },
+    {
+      "name": "constraint_ward_identity",
+      "residual": "0",
+      "status": "PASS"
+    },
+    {
+      "name": "F_derivative",
+      "residual": "0",
+      "status": "PASS"
+    },
+    {
+      "name": "constant_nonzero_q_obstruction",
+      "residual": "0",
+      "status": "PASS"
+    },
+    {
+      "name": "no_coupling_planck_recovery",
+      "residual": "0",
+      "status": "PASS"
+    }
+  ],
+  "count": 8,
+  "information_field_physically_identified": false,
+  "kind": "F02_scalar_tensor_FLRW_symbolic_checks_not_historical_EFMW",
+  "quantum_gravity_derived": false,
+  "scope": "Independent SymPy identities for a chosen Jordan-frame FLRW scalar-tensor model; no unique observable-to-field mapping; no external experiment.",
+  "status": "PASS"
+}
